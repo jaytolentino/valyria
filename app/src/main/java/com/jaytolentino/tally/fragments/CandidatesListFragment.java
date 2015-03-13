@@ -49,7 +49,7 @@ public class CandidatesListFragment extends Fragment {
         lvCandidates.setLayoutManager(layoutManager);
 
         List<Candidate> candidates = new ArrayList<>(Constants.MOCK_CANDIDATES);
-        candidatesAdapter = new CandidatesAdapter(candidates);
+        candidatesAdapter = new CandidatesAdapter(context, candidates);
         lvCandidates.setAdapter(candidatesAdapter);
         lvCandidates.setHasFixedSize(true);
         return view;
