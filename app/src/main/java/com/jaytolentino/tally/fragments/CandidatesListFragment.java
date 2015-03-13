@@ -12,8 +12,8 @@ import android.view.ViewGroup;
 
 import com.jaytolentino.tally.R;
 import com.jaytolentino.tally.adapters.CandidatesAdapter;
+import com.jaytolentino.tally.helpers.Constants;
 import com.jaytolentino.tally.models.Candidate;
-import com.jaytolentino.tally.models.Party;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,9 +48,7 @@ public class CandidatesListFragment extends Fragment {
         layoutManager.scrollToPosition(0);
         lvCandidates.setLayoutManager(layoutManager);
 
-        List<Candidate> candidates = new ArrayList<>();
-        candidates.add(new Candidate("Jane Doe", Party.REPUBLICANS));
-
+        List<Candidate> candidates = new ArrayList<>(Constants.MOCK_CANDIDATES);
         candidatesAdapter = new CandidatesAdapter(candidates);
         lvCandidates.setAdapter(candidatesAdapter);
         lvCandidates.setHasFixedSize(true);
