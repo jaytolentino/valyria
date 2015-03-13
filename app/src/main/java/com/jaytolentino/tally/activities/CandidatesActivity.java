@@ -1,9 +1,11 @@
-package com.jaytolentino.tally;
+package com.jaytolentino.tally.activities;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.jaytolentino.tally.R;
 
 
 public class CandidatesActivity extends ActionBarActivity {
