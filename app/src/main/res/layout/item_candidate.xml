@@ -9,13 +9,13 @@
     card_view:cardCornerRadius="2dp"
     card_view:cardElevation="2dp"
     android:layout_marginBottom="8dp"
-    style="@style/CardView.Light"
-    card_view:contentPadding="16dp">
+    style="@style/CardView.Light">
 
     <RelativeLayout
         android:id="@+id/rlCandidateHolder"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="16dp">
 
         <TextView
             android:id="@+id/tvName"
