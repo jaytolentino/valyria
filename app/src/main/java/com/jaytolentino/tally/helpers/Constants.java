@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Constants {
-
     public static final List<Candidate> MOCK_CANDIDATES = new ArrayList<Candidate>() {{
         add(new Candidate(
                 "Jeff Boss",

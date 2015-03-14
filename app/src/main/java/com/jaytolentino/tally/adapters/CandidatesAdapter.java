@@ -1,22 +1,17 @@
 package com.jaytolentino.tally.adapters;
 
-import android.annotation.TargetApi;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.jaytolentino.tally.R;
 import com.jaytolentino.tally.models.Candidate;
 import com.squareup.picasso.Picasso;
-import com.squareup.picasso.Target;
 
 import java.util.List;
 
@@ -40,33 +35,10 @@ public class CandidatesAdapter extends RecyclerView.Adapter<CandidatesAdapter.Vi
     }
 
     @Override
-    public void onBindViewHolder(final ViewHolder candidateItemViewHolder, int position) {
+    public void onBindViewHolder(final ViewHolder viewHolder, int position) {
         Candidate candidate = candidates.get(position);
-        candidateItemViewHolder.tvName.setText(candidate.getName());
-        RelativeLayout layout = candidateItemViewHolder.rlCandidateHolder;
-
-        Target target = new Target() {
-            @Override
-            @TargetApi(16)
-            public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
-                RelativeLayout layout = candidateItemViewHolder.rlCandidateHolder;
-                int sdk = android.os.Build.VERSION.SDK_INT;
-                if(sdk < android.os.Build.VERSION_CODES.JELLY_BEAN) {
-                    layout.setBackgroundDrawable(new BitmapDrawable(bitmap));
-                } else {
-                    layout.setBackground(new BitmapDrawable(context.getResources(), bitmap));
-                }
-            }
-
-            @Override
-            public void onBitmapFailed(Drawable errorDrawable) { /*NOP*/ }
-
-            @Override
-            public void onPrepareLoad(Drawable placeHolderDrawable) { /*NOP*/ }
-        };
-
-        layout.setTag(target);
-        Picasso.with(context).load(Uri.parse(candidate.getImageUrl())).into(target);
+        viewHolder.tvName.setText(candidate.getName());
+        Picasso.with(context).load(Uri.parse(candidate.getImageUrl())).into(viewHolder.ivProfile);
     }
 
     @Override
@@ -75,8 +47,8 @@ public class CandidatesAdapter extends RecyclerView.Adapter<CandidatesAdapter.Vi
     }
 
     public final static class ViewHolder extends RecyclerView.ViewHolder {
-        @InjectView(R.id.rlCandidateHolder)
-        RelativeLayout rlCandidateHolder;
+        @InjectView(R.id.ivProfile)
+        ImageView ivProfile;
 
         @InjectView(R.id.tvName)
         TextView tvName;

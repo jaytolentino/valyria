@@ -11,6 +11,13 @@
     android:layout_marginBottom="8dp"
     style="@style/CardView.Light">
 
+    <ImageView
+        android:id="@+id/ivProfile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/abc_btn_check_material" />
+
     <RelativeLayout
         android:id="@+id/rlCandidateHolder"
         android:layout_width="wrap_content"
