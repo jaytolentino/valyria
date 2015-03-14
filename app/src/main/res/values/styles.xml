@@ -2,10 +2,16 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Colors -->
         <item name="android:colorPrimary">#E91E63</item>
         <item name="android:textColorPrimary">#FFFFFF</item>
         <item name="android:textColor">#FFFFFF</item>
+
+        <!-- Fonts -->
         <item name="android:fontFamily">sans-serif-light</item>
+
+        <!-- Flags -->
+        <item name="android:windowContentTransitions">true</item>
     </style>
 
 </resources>

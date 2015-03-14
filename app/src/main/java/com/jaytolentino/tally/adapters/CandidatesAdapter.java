@@ -1,8 +1,11 @@
 package com.jaytolentino.tally.adapters;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.net.Uri;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +14,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.jaytolentino.tally.R;
+import com.jaytolentino.tally.activities.ProfileActivity;
+import com.jaytolentino.tally.fragments.CandidateHeaderFragment;
 import com.jaytolentino.tally.models.Candidate;
 import com.jaytolentino.tally.models.Party;
 import com.squareup.picasso.Picasso;
@@ -38,9 +43,18 @@ public class CandidatesAdapter extends RecyclerView.Adapter<CandidatesAdapter.Vi
 
     @Override
     public void onBindViewHolder(final ViewHolder viewHolder, int position) {
-        Candidate candidate = candidates.get(position);
+        final Candidate candidate = candidates.get(position);
         viewHolder.tvName.setText(candidate.getName());
         setupProfileImage(candidate, viewHolder.ivProfile);
+        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent openProfile = new Intent(context, ProfileActivity.class);
+                openProfile.putExtra(CandidateHeaderFragment.CANDIDATE_INFO, candidate);
+                ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(((Activity) context), viewHolder.ivProfile, "profileImage");
+                context.startActivity(openProfile, options.toBundle());
+            }
+        });
     }
 
     private void setupProfileImage(Candidate candidate, ImageView ivProfile) {
@@ -57,7 +71,7 @@ public class CandidatesAdapter extends RecyclerView.Adapter<CandidatesAdapter.Vi
     }
 
     public final static class ViewHolder extends RecyclerView.ViewHolder {
-        @InjectView(R.id.ivProfile)
+        @InjectView(R.id.ivProfileImage)
         ImageView ivProfile;
 
         @InjectView(R.id.tvName)

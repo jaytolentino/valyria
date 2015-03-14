@@ -2,8 +2,8 @@
 <android.support.v7.widget.CardView
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
     android:clickable="true"
     android:foreground="?android:attr/selectableItemBackground"
     card_view:cardCornerRadius="2dp"
@@ -12,13 +12,14 @@
     style="@style/CardView.Light">
 
     <ImageView
-        android:id="@+id/ivProfile"
+        android:id="@+id/ivProfileImage"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
         android:src="@drawable/abc_btn_check_material"
         android:tint="?android:attr/colorPrimary"
-        android:tintMode="multiply"/>
+        android:tintMode="multiply"
+        android:transitionName="profileImage" />
 
     <RelativeLayout
         android:id="@+id/rlCandidateHolder"
@@ -29,7 +30,8 @@
         <TextView
             android:id="@+id/tvName"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:transitionName="candidateName" />
 
     </RelativeLayout>
 

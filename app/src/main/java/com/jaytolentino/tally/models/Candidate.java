@@ -1,6 +1,8 @@
 package com.jaytolentino.tally.models;
 
-public class Candidate {
+import java.io.Serializable;
+
+public class Candidate implements Serializable {
     private String name;
     private String imageUrl;
     private Party party;
