@@ -15,6 +15,10 @@ public class Candidate {
         return name;
     }
 
+    public Party getParty() {
+        return party;
+    }
+
     public String getImageUrl() {
         return imageUrl;
     }

@@ -16,7 +16,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/abc_btn_check_material" />
+        android:src="@drawable/abc_btn_check_material"
+        android:tint="?android:attr/colorPrimary"
+        android:tintMode="multiply"/>
 
     <RelativeLayout
         android:id="@+id/rlCandidateHolder"
