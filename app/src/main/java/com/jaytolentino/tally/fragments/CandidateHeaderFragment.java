@@ -8,8 +8,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.jaytolentino.tally.R;
+import com.jaytolentino.tally.helpers.UIUtils;
 import com.jaytolentino.tally.models.Candidate;
 import com.squareup.picasso.Picasso;
 
@@ -25,6 +27,8 @@ public class CandidateHeaderFragment extends Fragment {
 
     @InjectView(R.id.ivProfileImage)
     ImageView ivProfileImage;
+    @InjectView(R.id.tvName)
+    TextView tvName;
 
     public CandidateHeaderFragment() {}
 
@@ -49,6 +53,8 @@ public class CandidateHeaderFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_candidate_header, container, false);
         ButterKnife.inject(this, view);
         if (candidate != null) {
+            tvName.setText(candidate.getName());
+            container.getRootView().setBackgroundColor(UIUtils.getPartyColor(context, candidate.getParty()));
             Picasso.with(context).load(candidate.getImageUrl()).into(ivProfileImage);
         }
         return view;

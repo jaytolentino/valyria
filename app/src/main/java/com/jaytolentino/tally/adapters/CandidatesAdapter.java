@@ -16,8 +16,8 @@ import android.widget.TextView;
 import com.jaytolentino.tally.R;
 import com.jaytolentino.tally.activities.ProfileActivity;
 import com.jaytolentino.tally.fragments.CandidateHeaderFragment;
+import com.jaytolentino.tally.helpers.UIUtils;
 import com.jaytolentino.tally.models.Candidate;
-import com.jaytolentino.tally.models.Party;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -59,10 +59,7 @@ public class CandidatesAdapter extends RecyclerView.Adapter<CandidatesAdapter.Vi
 
     private void setupProfileImage(Candidate candidate, ImageView ivProfile) {
         Picasso.with(context).load(Uri.parse(candidate.getImageUrl())).into(ivProfile);
-        int democratTint = context.getResources().getColor(R.color.democrat_tint);
-        int republicanTint = context.getResources().getColor(R.color.republican_tint);
-        int tintId = candidate.getParty() == Party.DEMOCRATS ? democratTint : republicanTint;
-        ivProfile.setColorFilter(tintId, PorterDuff.Mode.MULTIPLY);
+        ivProfile.setColorFilter(UIUtils.getTint(context, candidate.getParty()), PorterDuff.Mode.MULTIPLY);
     }
 
     @Override
