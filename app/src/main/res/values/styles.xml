@@ -19,7 +19,6 @@
         <item name="android:textColor">@color/text_title</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">22sp</item>
-        <item name="android:transitionName">@string/transition_candidate_name</item>
     </style>
 
     <style name="Subtitle">

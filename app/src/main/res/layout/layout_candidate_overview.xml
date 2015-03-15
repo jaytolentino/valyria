@@ -4,7 +4,8 @@
     android:id="@+id/rlCandidateOverview"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:transitionName="overview">
 
         <ImageView
             android:id="@+id/ivProfileImage"
@@ -14,7 +15,6 @@
             android:src="@drawable/abc_btn_check_material"
             android:tint="?android:attr/colorPrimary"
             android:tintMode="multiply"
-            android:transitionName="@string/transition_profile_image"
             android:layout_alignBottom="@+id/rlText"
             android:layout_alignTop="@id/rlText"/>
 

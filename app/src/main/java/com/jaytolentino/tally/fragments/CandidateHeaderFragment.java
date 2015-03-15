@@ -2,6 +2,7 @@ package com.jaytolentino.tally.fragments;
 
 
 import android.content.Context;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -28,6 +29,8 @@ public class CandidateHeaderFragment extends Fragment {
     ImageView ivProfileImage;
     @InjectView(R.id.tvName)
     TextView tvName;
+    @InjectView(R.id.tvTitle)
+    TextView tvTitle;
 
     public CandidateHeaderFragment() {}
 
@@ -53,7 +56,8 @@ public class CandidateHeaderFragment extends Fragment {
         ButterKnife.inject(this, view);
         if (candidate != null) {
             tvName.setText(candidate.getName());
-            container.getRootView().setBackgroundColor(candidate.getParty().getColor(context));
+            tvTitle.setText(candidate.getTitle());
+            ivProfileImage.setColorFilter(candidate.getParty().getTint(context), PorterDuff.Mode.MULTIPLY);
             Picasso.with(context).load(candidate.getImageUrl()).into(ivProfileImage);
         }
         return view;
