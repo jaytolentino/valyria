@@ -4,6 +4,7 @@ package com.jaytolentino.tally.fragments;
 import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -43,8 +44,8 @@ public class CandidatesListFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_candidates_list, container, false);
         ButterKnife.inject(this, view);
 
-        LinearLayoutManager layoutManager = new LinearLayoutManager(context);
-        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        GridLayoutManager layoutManager = new GridLayoutManager(context, 2);
+        layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         layoutManager.scrollToPosition(0);
         lvCandidates.setLayoutManager(layoutManager);
 

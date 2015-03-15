@@ -17,11 +17,11 @@
         android:id="@+id/tvName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:transitionName="@string/transition_candidate_name"
         android:text="tvName"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/ivProfileImage"
         android:layout_toEndOf="@+id/ivProfileImage"
-        android:layout_alignBottom="@+id/ivProfileImage" />
+        android:layout_alignBottom="@+id/ivProfileImage"
+        style="@style/MainTitle" />
 
 </RelativeLayout>

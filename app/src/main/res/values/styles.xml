@@ -4,8 +4,8 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Colors -->
         <item name="android:colorPrimary">#E91E63</item>
-        <item name="android:textColorPrimary">#FFFFFF</item>
-        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textColorPrimary">@color/text_title</item>
+        <item name="android:textColor">@color/text_normal</item>
 
         <!-- Fonts -->
         <item name="android:fontFamily">sans-serif-light</item>
@@ -13,5 +13,19 @@
         <!-- Flags -->
         <item name="android:windowContentTransitions">true</item>
     </style>
+    
+    <style name="MainTitle">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/text_title</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:transitionName">@string/transition_candidate_name</item>
+    </style>
+
+    <style name="Subtitle">
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textColor">@color/text_title</item>
+        <item name="android:textSize">18sp</item>
+    </style>>
 
 </resources>
