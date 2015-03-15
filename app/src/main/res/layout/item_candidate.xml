@@ -19,7 +19,7 @@
         android:src="@drawable/abc_btn_check_material"
         android:tint="?android:attr/colorPrimary"
         android:tintMode="multiply"
-        android:transitionName="profileImage" />
+        android:transitionName="@string/transition_profile_image" />
 
     <RelativeLayout
         android:id="@+id/rlCandidateHolder"
@@ -31,7 +31,7 @@
             android:id="@+id/tvName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:transitionName="candidateName" />
+            android:transitionName="@string/transition_candidate_name" />
 
     </RelativeLayout>
 

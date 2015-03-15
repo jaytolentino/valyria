@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.support.v4.app.ActivityOptionsCompat;
+import android.support.v4.util.Pair;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -45,12 +46,25 @@ public class CandidatesAdapter extends RecyclerView.Adapter<CandidatesAdapter.Vi
         final Candidate candidate = candidates.get(position);
         viewHolder.tvName.setText(candidate.getName());
         setupProfileImage(candidate, viewHolder.ivProfile);
+        setupTransitionToProfile(viewHolder, candidate);
+    }
+
+    private void setupTransitionToProfile(final CandidatesAdapter.ViewHolder viewHolder,
+                                          final Candidate candidate) {
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent openProfile = new Intent(context, ProfileActivity.class);
                 openProfile.putExtra(CandidateHeaderFragment.CANDIDATE_INFO, candidate);
-                ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(((Activity) context), viewHolder.ivProfile, "profileImage");
+
+                Pair<View, String> images = Pair.create(
+                        (View) viewHolder.ivProfile,
+                        context.getString(R.string.transition_profile_image));
+                Pair<View, String> names = Pair.create(
+                        (View) viewHolder.tvName,
+                        context.getString(R.string.transition_candidate_name));
+
+                ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(((Activity) context), images, names);
                 context.startActivity(openProfile, options.toBundle());
             }
         });

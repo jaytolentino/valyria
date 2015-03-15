@@ -10,14 +10,14 @@
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:scaleType="centerCrop"
-        android:transitionName="profileImage"
+        android:transitionName="@string/transition_profile_image"
         android:src="@drawable/abc_btn_check_material" />
 
     <TextView
         android:id="@+id/tvName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:transitionName="candidateName"
+        android:transitionName="@string/transition_candidate_name"
         android:text="tvName"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/ivProfileImage"

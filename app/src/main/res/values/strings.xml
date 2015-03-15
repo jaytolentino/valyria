@@ -4,4 +4,8 @@
 
     <string name="action_settings">Settings</string>
     <string name="title_activity_profile">ProfileActivity</string>
+
+    <!-- Transistions -->
+    <string name="transition_profile_image">profileImage</string>
+    <string name="transition_candidate_name">candidateName</string>
 </resources>
