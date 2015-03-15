@@ -25,7 +25,7 @@
     <style name="Subtitle">
         <item name="android:fontFamily">sans-serif-light</item>
         <item name="android:textColor">@color/text_title</item>
-        <item name="android:textSize">18sp</item>
+        <item name="android:textSize">14sp</item>
     </style>>
 
 </resources>

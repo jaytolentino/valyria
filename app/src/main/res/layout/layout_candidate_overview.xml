@@ -14,20 +14,22 @@
             android:src="@drawable/abc_btn_check_material"
             android:tint="?android:attr/colorPrimary"
             android:tintMode="multiply"
-            android:transitionName="@string/transition_profile_image" />
+            android:transitionName="@string/transition_profile_image"
+            android:layout_alignBottom="@+id/rlText"
+            android:layout_alignTop="@id/rlText"/>
 
         <RelativeLayout
+            android:id="@+id/rlText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/ivProfileImage"
-            android:layout_alignBottom="@id/ivProfileImage"
-            android:padding="16dp">
+            android:padding="32dp">
 
             <TextView
                 android:id="@+id/tvTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="@style/Subtitle"
+                android:text="tvTitle"
                 android:gravity="center" />
 
             <TextView
@@ -35,7 +37,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="@style/MainTitle"
-                android:gravity="center" />
+                android:gravity="center"
+                android:layout_below="@+id/tvTitle"
+                android:layout_centerHorizontal="true"
+                android:text="tvName" />
 
         </RelativeLayout>
 
