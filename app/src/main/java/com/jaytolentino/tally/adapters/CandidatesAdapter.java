@@ -16,7 +16,6 @@ import android.widget.TextView;
 import com.jaytolentino.tally.R;
 import com.jaytolentino.tally.activities.ProfileActivity;
 import com.jaytolentino.tally.fragments.CandidateHeaderFragment;
-import com.jaytolentino.tally.helpers.UIUtils;
 import com.jaytolentino.tally.models.Candidate;
 import com.squareup.picasso.Picasso;
 
@@ -59,7 +58,7 @@ public class CandidatesAdapter extends RecyclerView.Adapter<CandidatesAdapter.Vi
 
     private void setupProfileImage(Candidate candidate, ImageView ivProfile) {
         Picasso.with(context).load(Uri.parse(candidate.getImageUrl())).into(ivProfile);
-        ivProfile.setColorFilter(UIUtils.getTint(context, candidate.getParty()), PorterDuff.Mode.MULTIPLY);
+        ivProfile.setColorFilter(candidate.getParty().getTint(context), PorterDuff.Mode.MULTIPLY);
     }
 
     @Override

@@ -11,7 +11,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.jaytolentino.tally.R;
-import com.jaytolentino.tally.helpers.UIUtils;
 import com.jaytolentino.tally.models.Candidate;
 import com.squareup.picasso.Picasso;
 
@@ -54,7 +53,7 @@ public class CandidateHeaderFragment extends Fragment {
         ButterKnife.inject(this, view);
         if (candidate != null) {
             tvName.setText(candidate.getName());
-            container.getRootView().setBackgroundColor(UIUtils.getPartyColor(context, candidate.getParty()));
+            container.getRootView().setBackgroundColor(candidate.getParty().getColor(context));
             Picasso.with(context).load(candidate.getImageUrl()).into(ivProfileImage);
         }
         return view;
