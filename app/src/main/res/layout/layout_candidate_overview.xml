@@ -4,19 +4,17 @@
     android:id="@+id/rlCandidateOverview"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:transitionName="overview">
 
         <ImageView
             android:id="@+id/ivProfileImage"
             android:layout_width="match_parent"
-            android:layout_height="125dp"
+            android:layout_height="match_parent"
             android:scaleType="centerCrop"
             android:src="@drawable/abc_btn_check_material"
             android:tint="?android:attr/colorPrimary"
-            android:tintMode="multiply"
-            android:layout_alignBottom="@+id/rlText"
-            android:layout_alignTop="@id/rlText"/>
+            android:tintMode="multiply" />
 
         <RelativeLayout
             android:id="@+id/rlText"

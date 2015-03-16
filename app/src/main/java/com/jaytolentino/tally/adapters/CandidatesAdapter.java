@@ -45,7 +45,6 @@ public class CandidatesAdapter extends RecyclerView.Adapter<CandidatesAdapter.Vi
         final Candidate candidate = candidates.get(position);
         viewHolder.tvName.setText(candidate.getName());
         viewHolder.tvTitle.setText(candidate.getTitle());
-        viewHolder.tvState.setText(candidate.getState());
         setupProfileImage(candidate, viewHolder.ivProfile);
         setupTransitionToProfile(viewHolder, candidate);
     }
@@ -82,9 +81,6 @@ public class CandidatesAdapter extends RecyclerView.Adapter<CandidatesAdapter.Vi
 
         @InjectView(R.id.tvTitle)
         TextView tvTitle;
-
-        @InjectView(R.id.tvState)
-        TextView tvState;
 
         private ViewHolder(View itemView) {
             super(itemView);
