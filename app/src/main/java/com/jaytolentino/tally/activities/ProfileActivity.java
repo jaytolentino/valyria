@@ -17,15 +17,13 @@ public class ProfileActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        if (getIntent().hasExtra(CandidateHeaderFragment.CANDIDATE_INFO)) {
-            Candidate candidate = (Candidate) getIntent().getSerializableExtra(CandidateHeaderFragment.CANDIDATE_INFO);
-            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            
-            Bundle args = new Bundle();
-            args.putSerializable(CandidateHeaderFragment.CANDIDATE_INFO, candidate);
-            ft.replace(R.id.rlHeaderContainer, CandidateHeaderFragment.newInstance(args));
-            ft.commit();
-        }
+        Candidate candidate = (Candidate) getIntent().getSerializableExtra(CandidateHeaderFragment.CANDIDATE_INFO);
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+
+        Bundle args = new Bundle();
+        args.putSerializable(CandidateHeaderFragment.CANDIDATE_INFO, candidate);
+        ft.replace(R.id.rlHeaderContainer, CandidateHeaderFragment.newInstance(args));
+        ft.commit();
     }
 
 

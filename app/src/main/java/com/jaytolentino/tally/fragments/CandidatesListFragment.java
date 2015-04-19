@@ -24,8 +24,8 @@ import butterknife.InjectView;
 public class CandidatesListFragment extends Fragment {
     private Context context;
 
-    @InjectView(R.id.lvCandidates)
-    RecyclerView lvCandidates;
+    @InjectView(R.id.rvCandidates)
+    RecyclerView rvCandidates;
 
     private CandidatesAdapter candidatesAdapter;
 
@@ -46,12 +46,12 @@ public class CandidatesListFragment extends Fragment {
         LinearLayoutManager layoutManager = new LinearLayoutManager(context);
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         layoutManager.scrollToPosition(0);
-        lvCandidates.setLayoutManager(layoutManager);
+        rvCandidates.setLayoutManager(layoutManager);
 
         List<Candidate> candidates = new ArrayList<>(Constants.MOCK_CANDIDATES);
         candidatesAdapter = new CandidatesAdapter(context, candidates);
-        lvCandidates.setAdapter(candidatesAdapter);
-        lvCandidates.setHasFixedSize(true);
+        rvCandidates.setAdapter(candidatesAdapter);
+        rvCandidates.setHasFixedSize(true);
         return view;
     }
 }
